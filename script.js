@@ -1,75 +1,66 @@
-const p1Button = document.querySelector("#p1Button")
-const p2Button = document.querySelector("#p2Button")
+const p1 = {
+    score: 0,
+    button: document.querySelector('#p1Button'),
+    display: document.querySelector('#p1Display')
+
+}
+const p2 = {
+    score: 0,
+    button: document.querySelector('#p2Button'),
+    display: document.querySelector('#p2Display')
+
+}
 const reset = document.querySelector("#reset")
-const p1Display = document.querySelector("#p1Display")
-const p2Display = document.querySelector("#p2Display")
 const playTo = document.querySelector("#playto")
-
 let winningScore = playTo.value;
-
-// console.log(winningScore);
-// console.log(typeof(winningScore));
-let p1Score = 0
-let p2Score = 0
 let isGameOver = false
 
-
+// Disabling the dropdown in html
 playTo.addEventListener("input", function() {
     winningScore = this.value
-    console.log(typeof(winningScore))
+        // console.log(typeof(winningScore))
 
 })
 
-
-p1Button.addEventListener("click", () => {
+function updateScore(player, opponent) {
     if (!isGameOver) {
-        p1Score++
-        p1Display.innerText = p1Score
-        if (p1Score == winningScore) {
+        player.score++
+            player.display.innerText = player.score
+        if (player.score == winningScore) {
             isGameOver = true
-            p1Button.disabled = true
-            p2Button.disabled = true
-            p1Display.style.color = 'green';
-            p2Display.style.color = 'red';
+            player.button.disabled = true
+            opponent.button.disabled = true
+            player.display.style.color = 'green';
+            opponent.display.style.color = 'red';
 
         }
-        if (p1Score > 1 | p2Score > 1) {
+        if (player.score > 1 | opponent.score > 1) {
             playTo.disabled = true
         }
     }
+}
+
+
+p1.button.addEventListener("click", () => {
+    updateScore(p1, p2)
 })
 
-p2Button.addEventListener("click", () => {
-    if (!isGameOver) {
-        p2Score++
-        p2Display.innerText = p2Score
-        if (p2Score == winningScore) {
-            isGameOver = true
-            p1Button.disabled = true
-            p2Button.disabled = true
-            p2Display.style.color = 'green';
-            p1Display.style.color = 'red';
-
-
-        }
-        if (p1Score > 1 | p2Score > 1) {
-            playTo.disabled = true
-        }
-    }
+p2.button.addEventListener("click", () => {
+    updateScore(p2, p1)
 })
 
 function resetValues() {
-    p1Display.innerText = '0'
-    p2Display.innerText = '0'
-    p1Score = 0
-    p2Score = 0
+    p1.display.innerText = '0'
+    p2.display.innerText = '0'
+    p1.score = 0
+    p2.score = 0
 
     isGameOver = false
-    p1Button.disabled = false
-    p2Button.disabled = false
+    p1.button.disabled = false
+    p2.button.disabled = false
     playTo.disabled = false
-    p2Display.style.color = 'black';
-    p1Display.style.color = 'black';
+    p2.display.style.color = 'black';
+    p1.display.style.color = 'black';
 
 }
 
