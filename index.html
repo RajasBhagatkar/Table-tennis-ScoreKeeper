@@ -1,0 +1,90 @@
+<head>
+    <title>DisplayKepper CodeAlong</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="container">
+        <div class="columns is-half">
+            <div class="column is-half
+is-offset-one-quarter">
+
+                <div class="card">
+                    <header class="card-header">
+                        <h1 class="card-header-title">
+                            <div class="columns">
+                                <div class="column">
+                                    <h1 class="title is-3 is-center">ScoreKeeper</h1>
+
+                                </div>
+                            </div>
+                        </h1>
+                        <button class="card-header-icon" aria-label="more options">
+                            <span class="icon">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            <!-- here goes the containt -->
+                            <figure class="image">
+                                <img src="https://th.bing.com/th/id/OIP.REZY5-7_QVhGW5t_fH34bQHaEK?w=271&h=180&c=7&r=0&o=5&pid=1.7" alt="">
+                            </figure>
+                            <div class="column">
+
+                                <h1 style="display: inline-block; margin-right: 20px;" class="title is-1"><span id="p1Display">0</span>
+                                    <span>to</span> <span id="p2Display">0</span>
+                                </h1>
+                                <span class="select" style="margin-top: 10px;">
+                                    <select name="playto" id="playto">
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <p class="has-text-centered " style="font-size: 1.5em;">Use The Button below to Keep the track of Score</p>
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <button id="p1Button" class="button is-large is-primary card-footer-item">+1 Player One</button>
+                        <button id="p2Button" class="button is-large is-info card-footer-item">+1 Player Two</button>
+                        <button id="reset" class="button is-large is-danger card-footer-item">Reset</button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <h1>ScoreKeeper</h1> -->
+    <!-- <h1><span id="p1Display">0</span> <span>to</span> <span id="p2Display">0</span></h1> -->
+    <!-- <input type="number" style="width: 10%;"> -->
+
+    <!-- <select name="playto" id="playto" style="width: 50px;">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select> -->
+    <!-- <button id="p1Button" class="card-footer-item">+1 Player One</button>
+    <button id="p2Button" class="card-footer-item">+1 Player Two</button>
+    <button id="reset" class="card-footer-item">Reset</button> -->
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
